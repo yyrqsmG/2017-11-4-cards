@@ -91,7 +91,7 @@ void CARD::show_cards()
     {
         for (j = 0; j < PLAYER_CARD_NUM; j++) 
         {
-            cout<<card_type(player_cards[i][j].m_type)<<card_name(player_cards[i][j].m_num);
+            cout<<card_type(player_cards[i][j].m_type)<<card_name(player_cards[i][j].m_num)<<' ';
         }
         cout<<endl;
     }
@@ -121,7 +121,7 @@ char card_type(int type)
             return 5;//梅花
         case 2:
             return 3;//红桃
-        default:
+        case 3:
             return 6;//黑桃
     }
 }
@@ -129,7 +129,8 @@ char card_type(int type)
 char* card_name(int num)
 {
     //定义牌号
-    static char* card_nums[CARD_NUM] = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+    //static 
+	char* card_nums[CARD_NUM] = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
     //从牌号数组中取出牌号
     return card_nums[num];
 }
